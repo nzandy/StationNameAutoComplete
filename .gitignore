@@ -1,3 +1,6 @@
 /StationAutoComplete/bin
 /StationAutoComplete/obj
-.vs/
+.vs
+/TrieLib/bin
+/TrieLib/obj
+
