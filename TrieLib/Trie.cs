@@ -43,6 +43,9 @@ namespace TrieLib {
 		public List<string> GetAutoCompletions(string prefix) {
 			Node matchedNode = FindPrefixNode(prefix);
 			List<string> completions = new List<string>();
+			if (matchedNode == null) {
+				return completions;
+			}
 			StringBuilder autoCompletionBuilder = new StringBuilder(prefix);
 			GetAutoCompletionsRecursive(matchedNode, autoCompletionBuilder, completions);
 			return completions;
@@ -82,6 +85,9 @@ namespace TrieLib {
 		/// <param name="s">The string to add to the Trie.</param>
 		public void Insert(string s) {
 			Node commonPrefix = FindPrefixNode(s);
+			if (commonPrefix == null) {
+				commonPrefix = _root;
+			}
 			Node current = commonPrefix;
 
 			for (var i = current.Depth; i < s.Length; i++) {

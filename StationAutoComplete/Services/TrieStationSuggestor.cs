@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using StationAutoComplete.Models;
 using StationAutoComplete.Repositories;
 using TrieLib;
 using System.Collections.Generic;

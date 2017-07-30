@@ -8,7 +8,7 @@ namespace StationAutoComplete.Repositories {
 
 		public IEnumerable<string> GetStationNames() {
 			if (_stationNames == null) {
-				List<string> stations = ALL_STATION_NAMES.Split(',').ToList();
+				List<string> stations = ALL_STATION_NAMES.ToUpper().Split(',').ToList();
 				_stationNames = stations.Select(s => s.Trim()).ToList();
 			}
 			return _stationNames;

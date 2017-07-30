@@ -45,7 +45,7 @@
     <Compile Include="Services\IStationFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IStationSuggestor.cs" />
-    <Compile Include="Services\StationFinder.cs" />
+    <Compile Include="Services\StationFinderService.cs" />
     <Compile Include="Models\Suggestions.cs" />
     <Compile Include="Services\TrieStationSuggestor.cs" />
   </ItemGroup>
