@@ -2,6 +2,10 @@
 using System.Text;
 
 namespace TrieLib {
+
+	/// <summary>
+	/// A search tree data structure that is optimal for quick retrieval of strings.
+	/// </summary>
 	public class Trie {
 		private const char WORD_COMPLETION_CHAR = '$';
 		private readonly Node _root;
@@ -33,6 +37,9 @@ namespace TrieLib {
 			return prefix.Depth == s.Length && prefix.FindChildNode(WORD_COMPLETION_CHAR) != null;
 		}
 
+		/// <summary>
+		/// Return all strings that begin with the given prefix.
+		/// </summary>
 		public List<string> GetAutoCompletions(string prefix) {
 			Node matchedNode = FindPrefixNode(prefix);
 			List<string> completions = new List<string>();
@@ -41,26 +48,28 @@ namespace TrieLib {
 			return completions;
 		}
 
+		// Conducts depth first traversal of all words in our Trie that begin with the given prefix.
 		private void GetAutoCompletionsRecursive(Node currentNode, StringBuilder autoCompletionBuilder, List<string> completions) {
-			if (currentNode == null) {
-				autoCompletionBuilder.Length -= 1;
-			}
 
+			// We have reached the end of a word, add it to our auto complete collection.
 			if (currentNode.Value == WORD_COMPLETION_CHAR) {
+				autoCompletionBuilder.Length -= 1;
 				completions.Add(autoCompletionBuilder.ToString());
+				return;
 			}
 
 			if (currentNode.Children != null) {
 				foreach (Node node in currentNode.Children) {
-					if (node.Value != WORD_COMPLETION_CHAR) {
-						autoCompletionBuilder.Append(node.Value);
-					}
+					autoCompletionBuilder.Append(node.Value);
 					GetAutoCompletionsRecursive(node, autoCompletionBuilder, completions);
 				}
 			}
+			// When we have finished one word, we backtrack up the tree and as we do so we 
+			// remove each char value from our current stringbuilder.
 			autoCompletionBuilder.Length -= 1;
 		}
 
+		// Add a collection of strings to our Trie data structure.
 		public void InsertRange(IEnumerable<string> items) {
 			foreach (string s in items) {
 				Insert(s);
@@ -84,6 +93,7 @@ namespace TrieLib {
 			current.Children.Add(new Node('$', current.Depth + 1, current));
 		}
 
+		///
 		public void Delete(string s) {
 			if (Search(s)) {
 				// Because we know s exists in the trie, the common prefix will actually be the entire string we want to remove.

@@ -7,7 +7,6 @@ namespace StationAutoComplete.Services {
 
 		public StationFinder(IStationNameRepository stationRepo) {
 			_suggestor = new TrieStationSuggestor(stationRepo);
-
 		}
 
 		public Suggestions GetSuggestions(string userInput) {

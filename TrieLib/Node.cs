@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 
 namespace TrieLib {
 
+	/// <summary>
+	/// Represents a single character in a string as stored in a Trie data structure.
+	/// Holds references to any further Child nodes that continue to make up a string we have stored.
+	/// </summary>
 	public class Node {
 		public char Value { get; set; }
 		public List<Node> Children { get; set; }

@@ -11,7 +11,7 @@ namespace StationAutoCompleteTests {
 			var stationRepo = new HardcodedStationNameRepository();
 			var stations = stationRepo.GetStationNames();
 			var stationFinderService = new StationFinder(stationRepo);
-			var results = stationFinderService.GetSuggestions("D");
+			var results = stationFinderService.GetSuggestions("By");
 		}
 	}
 }
