@@ -1,5 +1,5 @@
 ﻿namespace StationAutoComplete.Services {
 	public interface IStationSuggestor {
-		Suggestions GetStationSuggestions(string prefix);
+		Suggestions GetSuggestions(string prefix);
 	}
 }

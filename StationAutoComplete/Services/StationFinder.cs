@@ -11,7 +11,7 @@ namespace StationAutoComplete.Services {
 		}
 
 		public Suggestions GetSuggestions(string userInput) {
-			return _suggestor.GetStationSuggestions(userInput);
+			return _suggestor.GetSuggestions(userInput);
 		}
 	}
 }

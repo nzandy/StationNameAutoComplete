@@ -44,9 +44,16 @@
     <Compile Include="Repositories\IStationNameRepository.cs" />
     <Compile Include="Services\IStationFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IStationSuggestor.cs" />
     <Compile Include="Services\StationFinder.cs" />
     <Compile Include="Models\Suggestions.cs" />
+    <Compile Include="Services\TrieStationSuggestor.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TrieLib\TrieLib.csproj">
+      <Project>{9615431b-8f57-4107-bbac-da7abd4b9185}</Project>
+      <Name>TrieLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

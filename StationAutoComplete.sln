@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StationAutoComplete", "StationAutoComplete\StationAutoComplete.csproj", "{37CE2EE5-A814-48D8-9FCE-DFBF10B985E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrieLib", "TrieLib\TrieLib.csproj", "{9615431B-8F57-4107-BBAC-DA7ABD4B9185}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StationAutoCompleteTests", "StationAutoCompleteTests\StationAutoCompleteTests.csproj", "{698165BF-E8E6-42A8-BE34-96F44DBE6BDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{37CE2EE5-A814-48D8-9FCE-DFBF10B985E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37CE2EE5-A814-48D8-9FCE-DFBF10B985E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37CE2EE5-A814-48D8-9FCE-DFBF10B985E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9615431B-8F57-4107-BBAC-DA7ABD4B9185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9615431B-8F57-4107-BBAC-DA7ABD4B9185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9615431B-8F57-4107-BBAC-DA7ABD4B9185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9615431B-8F57-4107-BBAC-DA7ABD4B9185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{698165BF-E8E6-42A8-BE34-96F44DBE6BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698165BF-E8E6-42A8-BE34-96F44DBE6BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698165BF-E8E6-42A8-BE34-96F44DBE6BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698165BF-E8E6-42A8-BE34-96F44DBE6BDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
