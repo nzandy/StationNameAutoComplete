@@ -5,12 +5,19 @@ using TrieLib;
 using System.Collections.Generic;
 
 namespace StationAutoComplete.Services {
+
+	/// <summary>
+	/// Provides efficient text search against a collection of UK train station names. Utilising a Trie implementation
+	/// to store and retrieve these stations.
+	/// </summary>
 	public class TrieStationSuggestor : IStationSuggestor {
 		private Trie _stationNameTrie;
 
 		public TrieStationSuggestor(IStationNameRepository stationRepo) {
 			_stationNameTrie = new Trie();
-			_stationNameTrie.InsertRange(stationRepo.GetStationNames());
+			// Store in uppercase to make comparison quicker at runtime (as we upper case input);
+			var upperCaseNames = stationRepo.GetStationNames().Select(n => n.ToUpper());
+			_stationNameTrie.InsertRange(upperCaseNames);
 		}
 
 		public Suggestions GetSuggestions(string prefix) {
