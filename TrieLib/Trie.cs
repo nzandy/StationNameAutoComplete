@@ -10,10 +10,11 @@ namespace TrieLib {
 	/// </summary>
 	public class Trie {
 		private const char WORD_COMPLETION_CHAR = '$';
+		private const char ROOT_NODE_CHAR = '^';
 		private readonly Node _root;
 
 		public Trie() {
-			_root = new Node('^', 0, null);
+			_root = new Node(ROOT_NODE_CHAR, 0, null);
 		}
 
 		/// <summary>
@@ -40,7 +41,9 @@ namespace TrieLib {
 		public List<string> GetAutoCompletions(string prefix) {
 			Node matchedNode = FindPrefixNode(prefix);
 			List<string> completions = new List<string>();
-			if (matchedNode == null) {
+
+			// No matches found
+			if (matchedNode == null || matchedNode.Value == ROOT_NODE_CHAR) {
 				return completions;
 			}
 			StringBuilder autoCompletionBuilder = new StringBuilder(prefix);

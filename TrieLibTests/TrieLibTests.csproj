@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="TrieFindPrefixTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrieGetAutoCompletionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
