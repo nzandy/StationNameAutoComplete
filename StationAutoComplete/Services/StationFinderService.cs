@@ -6,7 +6,7 @@ namespace StationAutoComplete.Services {
 
 	/// <summary>
 	/// Given a repository of Train station names, the StationFinderService can be used to
-	/// retrieve autocomplete suggestions when given a prefix.
+	/// retrieve autocomplete suggestions with given a prefix.
 	/// </summary>
 	public class StationFinderService : IStationFinder {
 
