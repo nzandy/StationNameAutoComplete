@@ -19,23 +19,11 @@ namespace TrieLib {
 			Parent = parent;
 		}
 
-		public bool IsLeaf() {
-			return Children.Count == 0;
-		}
-
 		public Node FindChildNode(char c) {
 			foreach (Node child in Children) {
 				if (child.Value == c) return child;
 			}
 			return null;
-		}
-
-		public void DeleteChildNode(char c) {
-			for (int i = 0; i < Children.Count; i++) {
-				if (Children[i].Value == c) {
-					Children.RemoveAt(i);
-				}
-			}
 		}
 	}
 }

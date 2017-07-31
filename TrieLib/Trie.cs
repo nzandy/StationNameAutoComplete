@@ -5,6 +5,8 @@ namespace TrieLib {
 
 	/// <summary>
 	/// A search tree data structure that is optimal for quick retrieval of strings.
+	/// Each node in the tree represents a character in a word/string we have stored.
+	/// Each node contains references to any children nodes (next letters in the string or end tokens).
 	/// </summary>
 	public class Trie {
 		private const char WORD_COMPLETION_CHAR = '$';
@@ -30,11 +32,6 @@ namespace TrieLib {
 				result = currentNode;
 			}
 			return result;
-		}
-
-		public bool Search(string s) {
-			Node prefix = FindPrefixNode(s);
-			return prefix.Depth == s.Length && prefix.FindChildNode(WORD_COMPLETION_CHAR) != null;
 		}
 
 		/// <summary>
@@ -97,19 +94,6 @@ namespace TrieLib {
 			}
 			// Add a terminating leaf node to mark end of string.
 			current.Children.Add(new Node('$', current.Depth + 1, current));
-		}
-
-		///
-		public void Delete(string s) {
-			if (Search(s)) {
-				// Because we know s exists in the trie, the common prefix will actually be the entire string we want to remove.
-				Node node = FindPrefixNode(s).FindChildNode('$');
-				while (node.IsLeaf()) {
-					Node parent = node.Parent;
-					parent.DeleteChildNode(node.Value);
-					node = parent;
-				}
-			}
 		}
 	}
 }
